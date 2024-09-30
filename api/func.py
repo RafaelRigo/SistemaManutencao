@@ -1,5 +1,5 @@
 class Funcionario:
-    def __init__(self, id, nome, salario, dataCadastro):
+    def __init__(self, id = None, nome = None, salario = None, dataCadastro = None):
         self._id = id
         self._nome = nome
         self._salario = salario

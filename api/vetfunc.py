@@ -25,7 +25,7 @@ class VetorFuncionario:
     def salvarEmArquivo(self, nomeArquivo):
         try:
             arquivo = open(nomeArquivo, 'w')
-            lista = []
+            lista = [None] * len(self._funcionarios)
             qts = 0
             for i in range(self._qtsFunc):
                 lista[qts] = self._funcionarios[i].toDict()
