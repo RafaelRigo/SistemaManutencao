@@ -5,9 +5,6 @@ class Funcionario:
         self._salario = salario
         self._dataCadastro = dataCadastro
 
-    def __str__(self):
-        return f'{self._id} {self._nome} {self._salario} {self._dataCadastro}'
-
     def toDict(self):
         return {
             'id': self._id,

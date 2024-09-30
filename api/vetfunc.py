@@ -71,3 +71,26 @@ class VetorFuncionario:
             return self._funcionarios[self._onde]
         return None
 
+    @property
+    def funcionarios(self):
+        return self._funcionarios
+    
+    @funcionarios.setter
+    def funcionarios(self, funcionarios):
+        self._funcionarios = funcionarios
+
+    @property
+    def qtsFunc(self):
+        return self._qtsFunc
+    
+    @qtsFunc.setter
+    def qtsFunc(self, qtsFunc):
+        self._qtsFunc = qtsFunc
+
+    @property
+    def onde(self):
+        return self._onde
+    
+    @onde.setter
+    def onde(self, onde):
+        self._onde = onde
