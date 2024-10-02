@@ -28,12 +28,12 @@ class VetorFuncionario:
     def salvarEmArquivo(self, nomeArquivo):
         try:
             arquivo = open(nomeArquivo, 'w', encoding='utf-8')
-            lista = [None] * len(self._funcionarios)
+            lista = [None] * self._qtsFunc
             qts = 0
             for i in range(self._qtsFunc):
                 lista[qts] = self._funcionarios[i].toDict()
                 qts += 1
-            json.dump(lista, arquivo)
+            json.dump(lista, arquivo, sort_keys=True, indent=4, separators=(',', ': '))
             arquivo.close()
         except Exception as erro:
             print(f'Ocorreu um erro: {erro}')
