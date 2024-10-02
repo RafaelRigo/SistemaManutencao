@@ -9,7 +9,8 @@ class Funcionario:
         return {
             'id': self._id,
             'nome': self._nome,
-            'salario': self._salario
+            'salario': self._salario,
+            'dataCadastro': self._dataCadastro
         }
 
     def fromDict(self, dicionario):

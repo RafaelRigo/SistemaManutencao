@@ -9,8 +9,11 @@ class VetorFuncionario:
     
     def lerDeArquivo(self, nomeArquivo):
         try:
-            arquivo = open(nomeArquivo, 'r')
+            arquivo = open(nomeArquivo, 'r', encoding='utf-8')
             dados = json.load(arquivo)
+            self._funcionarios = [None] * 10
+            self._qtsFunc = 0
+            self._onde = 0
             for i in range(len(dados)):
                 f = Funcionario()
                 f.fromDict(dados[i])
@@ -24,7 +27,7 @@ class VetorFuncionario:
     
     def salvarEmArquivo(self, nomeArquivo):
         try:
-            arquivo = open(nomeArquivo, 'w')
+            arquivo = open(nomeArquivo, 'w', encoding='utf-8')
             lista = [None] * len(self._funcionarios)
             qts = 0
             for i in range(self._qtsFunc):
