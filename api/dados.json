@@ -3,19 +3,13 @@
         "dataCadastro": "2021-01-01",
         "id": 1,
         "nome": "Jo\u00e3o Pereira",
-        "salario": 2000
+        "salario": 1350
     },
     {
         "dataCadastro": "2021-01-02",
         "id": 2,
         "nome": "Maria Silva",
         "salario": 3000
-    },
-    {
-        "dataCadastro": "2021-01-03",
-        "id": 3,
-        "nome": "Jos\u00e9 Santos",
-        "salario": 5000
     },
     {
         "dataCadastro": "2021-01-04",
@@ -31,20 +25,26 @@
     },
     {
         "dataCadastro": "2024-10-02",
-        "id": 6,
-        "nome": "Rafael Rigo",
-        "salario": "20000"
-    },
-    {
-        "dataCadastro": "2024-10-02",
         "id": 7,
         "nome": "Vin\u00edcius Pinheiro",
-        "salario": "500"
+        "salario": 9999
     },
     {
-        "dataCadastro": "2024-10-02",
-        "id": 8,
-        "nome": "Henri Gouvea",
-        "salario": "100000"
+        "dataCadastro": "2024-10-03",
+        "id": 9,
+        "nome": "Rafael Fazion",
+        "salario": 20000
+    },
+    {
+        "dataCadastro": "2024-10-03",
+        "id": 10,
+        "nome": "Jos\u00e9 Santos",
+        "salario": 1350
+    },
+    {
+        "dataCadastro": "2024-10-03",
+        "id": 11,
+        "nome": "Jo\u00e3o Gostosa",
+        "salario": 5205.3
     }
 ]

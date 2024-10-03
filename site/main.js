@@ -8,7 +8,6 @@ const paginaPrincipal = () => {
             let dados = data
             html = '';
             html += `<p>Quantidade de funcionários: ${data.length}</p>`;
-            console.log(data)
             
             const datas = []
             for (let i = 0; i < data.length; i++) {
@@ -27,12 +26,13 @@ const paginaPrincipal = () => {
             html = `<tr>
                         <th>ID</th>
                         <th>Nome</th>
-                        <th>Salário</th>
+                        <th>Salário (R$)</th>
                         <th>Data do Cadastro</th>
                     </tr>`;
 
             let min = Number.MAX_SAFE_INTEGER;
             let aux = 0;
+            let aux2 = 0;
             switch (filtro.value) {
                 case 'id':
                     for (let i = 0; i < dados.length-1; i++) {
@@ -44,8 +44,11 @@ const paginaPrincipal = () => {
                         }
                         if (i != min) {
                             aux = dados[i];
+                            aux2 = datas[i];
                             dados[i] = dados[min];
+                            datas[i] = datas[min];
                             dados[min] = aux;
+                            datas[min] = aux2;
                         }
                     }
                     break;
@@ -53,14 +56,17 @@ const paginaPrincipal = () => {
                     for (let i = 0; i < dados.length-1; i++) {
                         min = i;
                         for (let j = i + 1; j < dados.length; j++) {
-                            if (dados[j].nome.localeCompare(dados[min].nome)) {
+                            if (dados[j].nome.localeCompare(dados[min].nome) < 0) {
                                 min = j;
                             }
                         }
                         if (i != min) {
                             aux = dados[i];
+                            aux2 = datas[i];
                             dados[i] = dados[min];
+                            datas[i] = datas[min];
                             dados[min] = aux;
+                            datas[min] = aux2;
                         }
                     }
                     break;
@@ -74,8 +80,11 @@ const paginaPrincipal = () => {
                         }
                         if (dados[i] != dados[min]) {
                             aux = dados[i];
+                            aux2 = datas[i];
                             dados[i] = dados[min];
+                            datas[i] = datas[min];
                             dados[min] = aux;
+                            datas[min] = aux2;
                         }
                     }
                     break;
@@ -86,7 +95,7 @@ const paginaPrincipal = () => {
                 html += `<tr>
                             <td>${dados[i].id}</td>
                             <td>${dados[i].nome}</td>
-                            <td>${dados[i].salario}</td>
+                            <td>${parseFloat(dados[i].salario).toFixed(2)}</td>
                             <td>${dat}</td>
                         </tr>`
             }
@@ -112,7 +121,7 @@ const pesquisar = () => {
 
 const fazerCadastro = () => {
     const nome = document.getElementById('nome').value;
-    const salario = document.getElementById('salario').value;
+    const salario = parseFloat(document.getElementById('salario').value.replace(',', '.'));
     fetch('http://localhost:3050/funcionario', {
         method: "POST",
         body: JSON.stringify({nome, salario}),
@@ -120,6 +129,65 @@ const fazerCadastro = () => {
     })
     .then((res) => {
         if (res.ok)
-            alert(`Funcionário ${nome} cadastrado com salário de ${salario}`)
+            alert(`Funcionário ${nome} cadastrado com salário de R$${parseFloat(salario).toFixed(2)}`)
     })
+}
+
+const listaFunc = () => {
+    const ids = document.getElementById('ids')
+    fetch('http://localhost:3050/funcionario')
+        .then(res => res.json())
+        .then(data => {
+            let html = ''
+            data.forEach(func => {
+                html += `<option value="${func.id};${func.nome};${func.salario};${func.dataCadastro}">${func.id} - ${func.nome}</option>`
+            })
+            ids.innerHTML = html
+        })
+}
+
+const fazerRemocao = () => {
+    const ids = document.getElementById('ids')
+    const valor = ids.value.split(';')[0]
+    if (confirm("Deseja realmente remover este funcionário?")) {
+        fetch(`http://localhost:3050/funcionario/${valor}`, {
+            method: "DELETE"
+        })
+        .then(res => {
+            if (res.ok)
+                alert("Funcionário removido com sucesso!")
+        })
+    }
+}
+
+const fazerAtualizacao = () => {
+    const ids = document.getElementById('ids')
+    const id = parseInt(ids.value.split(';')[0])
+    const dataCadastro = ids.value.split(';')[3]
+    let nome = ''
+    let salario = ''
+    if (document.getElementById('nome').value != '') {
+        nome = document.getElementById('nome').value
+    } else {
+        nome = ids.value.split(';')[1]
+    }
+    if (document.getElementById('salario').value != '') {
+        salario = parseFloat(document.getElementById('salario').value)
+    } else {
+        salario = parseFloat(ids.value.split(';')[2])
+    }
+
+    const body = JSON.stringify({id, nome, salario, dataCadastro})
+    console.log(body)
+    if (confirm("Deseja realmente atualizar este funcionário?")) {
+        fetch(`http://localhost:3050/funcionario/${id}`, {
+            method: "PUT",
+            body,
+            headers: {"Content-type": "application/json; charset=UTF-8"}
+        })
+        .then(res => {
+            if (res.ok)
+                alert("Funcionário atualizado com sucesso!")
+        })
+    }
 }

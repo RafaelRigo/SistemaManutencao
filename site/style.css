@@ -66,6 +66,7 @@ div {
 }
 
 input {
+    background-color: #fff;
     margin: 10px 0px;
     padding: 5px;
     border-radius: 5px;
@@ -81,7 +82,7 @@ button {
     border: none;
     border-radius: 10px;
     padding: 7px 9px;
-    color: #ccc;
+    color: #fff;
     font-size: larger;
 }
 
@@ -96,7 +97,20 @@ button:active {
     color: #ccc;
 }
 
+select {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+#ids {
+    font-size: medium;
+}
+
 table {
+    background-color: #fff;
     align-self: center;
     width: 60%;
     border-collapse: collapse;

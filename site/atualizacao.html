@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório</title>
+    <title>Atualização</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="paginaPrincipal()">
+<body onload="listaFunc()">
     <header>
         <a href="index.html">
                 <svg width="15%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,19 +24,15 @@
         </nav>
     </header>
     <main>
-        <h1>Relatório</h1>
-        <div id="resumo"></div>
-        <input id="buscar" type="text" placeholder="buscar" onchange="pesquisar()">
-        <button id="pesquisa" onclick="pesquisar()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-          </svg></button>
-        <label>Ordenar por: </label>
-        <select name="filtro" id="filtro" onchange="paginaPrincipal()">
-            <option value="id">ID</option>
-            <option value="nome">Nome</option>
-            <option value="salario">Salário</option>
-        </select>
-        <table id="func"></table>
+        <h1>Atualização</h1>
+        <p>Selecione o funcionário que deseja atualizar: </p>
+        <select name="ids" id="ids"></select>
+        <p></p>
+        <label for="">Novo nome: </label><input id="nome" type="text" placeholder="Deixe em branco para manter">
+        <p></p>
+        <label for="">Novo salario: </label><input id="salario" type="number" placeholder="Deixe em branco para manter">
+        <p></p>
+        <button id="atualizar" onclick="fazerAtualizacao()">Atualizar</button>
     </main>
 </body>
 <script src="main.js"></script>
