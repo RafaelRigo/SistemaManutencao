@@ -121,7 +121,7 @@ const pesquisar = () => {
 
 const fazerCadastro = () => {
     const nome = document.getElementById('nome').value;
-    const salario = parseFloat(document.getElementById('salario').value.replace(',', '.'));
+    const salario = parseFloat(document.getElementById('salario').value);
     fetch('http://localhost:3050/funcionario', {
         method: "POST",
         body: JSON.stringify({nome, salario}),
