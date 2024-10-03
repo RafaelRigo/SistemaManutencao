@@ -55,6 +55,7 @@ class VetorFuncionario:
                 inicio = self._onde + 1
             else:
                 fim = self._onde - 1
+        return False
         
     def adicionarFuncionario(self, func):
         if (not self.existeFuncionario(func.id)):
