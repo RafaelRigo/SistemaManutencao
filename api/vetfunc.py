@@ -15,6 +15,8 @@ class VetorFuncionario:
             self._qtsFunc = 0
             self._onde = 0
             for i in range(len(dados)):
+                if (self._qtsFunc == len(self._funcionarios)):
+                    self.expandirVetor()
                 f = Funcionario()
                 f.fromDict(dados[i])
                 self._funcionarios[self._qtsFunc] = f

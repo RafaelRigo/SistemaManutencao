@@ -1,4 +1,3 @@
-import json
 from func import Funcionario
 from vetfunc import VetorFuncionario
 from datetime import datetime
@@ -34,12 +33,13 @@ def inserir():
     dados = request.json
     dados['id'] = vetor.funcionarios[vetor.qtsFunc-1].id + 1
     dados['dataCadastro'] = datetime.today().isoformat().split("T")[0]
-    print(dados['dataCadastro'])
     f = Funcionario()
     f.fromDict(dados)
     if vetor.existeFuncionario(f.id):
         return 'Funcionário já existe', 400
+    print(f.toDict())
     vetor.adicionarFuncionario(f)
+    print('adicionou')
     vetor.salvarEmArquivo(arq)
     return jsonify(f.toDict()), 201
 
