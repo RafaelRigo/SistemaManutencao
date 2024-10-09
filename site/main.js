@@ -6,6 +6,7 @@ const paginaPrincipal = () => {
         .then(res => res.json())
         .then(data => {
             let dados = data
+            console.log(dados)
             html = '';
             html += `<p>Quantidade de funcionários: ${data.length}</p>`;
             
@@ -178,7 +179,6 @@ const fazerAtualizacao = () => {
     }
 
     const body = JSON.stringify({id, nome, salario, dataCadastro})
-    console.log(body)
     if (confirm("Deseja realmente atualizar este funcionário?")) {
         fetch(`http://localhost:3050/funcionario/${id}`, {
             method: "PUT",

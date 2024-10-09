@@ -59,7 +59,7 @@ class VetorFuncionario:
                 fim = self._onde - 1
         return False
         
-    def adicionarFuncionario(self, func):
+    def adicionarFuncionario(self, func: Funcionario):
         if (not self.existeFuncionario(func.id)):
             if self._qtsFunc == len(self._funcionarios):
                 self.expandirVetor()

@@ -27,7 +27,7 @@ class Relatorio extends StatelessWidget {
 
     final theme = Theme.of(context);
 
-    final funcionarios = fetchFuncionarios();
+    // final funcionarios = fetchFuncionarios();
 
     return Center(
       child: Column(

@@ -37,9 +37,7 @@ def inserir():
     f.fromDict(dados)
     if vetor.existeFuncionario(f.id):
         return 'Funcionário já existe', 400
-    print(f.toDict())
     vetor.adicionarFuncionario(f)
-    print('adicionou')
     vetor.salvarEmArquivo(arq)
     return jsonify(f.toDict()), 201
 
