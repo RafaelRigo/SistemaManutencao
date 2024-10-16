@@ -1,33 +1,9 @@
 [
     {
-        "dataCadastro": "2021-01-01",
-        "id": 1,
-        "nome": "Jo\u00e3o Pereira",
-        "salario": 1350
-    },
-    {
-        "dataCadastro": "2021-01-02",
-        "id": 2,
-        "nome": "Maria Silva",
-        "salario": 3000
-    },
-    {
-        "dataCadastro": "2021-01-04",
-        "id": 4,
-        "nome": "Ana Oliveira",
-        "salario": 4000
-    },
-    {
-        "dataCadastro": "2021-01-05",
-        "id": 5,
-        "nome": "Francisco Souza",
-        "salario": 6000
-    },
-    {
         "dataCadastro": "2024-10-02",
         "id": 7,
         "nome": "Vin\u00edcius Pinheiro",
-        "salario": 1350
+        "salario": 1400
     },
     {
         "dataCadastro": "2024-10-03",
@@ -49,12 +25,6 @@
     },
     {
         "dataCadastro": "2024-10-03",
-        "id": 12,
-        "nome": "Mosquit\u00e3o",
-        "salario": 15340.99
-    },
-    {
-        "dataCadastro": "2024-10-03",
         "id": 13,
         "nome": "Pietro",
         "salario": 8900.5
@@ -63,6 +33,12 @@
         "dataCadastro": "2024-10-09",
         "id": 14,
         "nome": "Bryan",
-        "salario": 0.5
+        "salario": 2000
+    },
+    {
+        "dataCadastro": "2024-10-16",
+        "id": 15,
+        "nome": "Victor Emiliano",
+        "salario": 53040
     }
 ]
