@@ -40,5 +40,11 @@
         "id": 15,
         "nome": "Victor Emiliano",
         "salario": 53040
+    },
+    {
+        "dataCadastro": "2024-10-16",
+        "id": 16,
+        "nome": "Samuel Parra",
+        "salario": 9876.65
     }
 ]

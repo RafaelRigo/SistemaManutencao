@@ -129,8 +129,11 @@ const fazerCadastro = () => {
         headers: {"Content-type": "application/json; charset=UTF-8"}
     })
     .then((res) => {
-        if (res.ok)
+        if (res.ok) {
+            document.getElementById('nome').value = ''
+            document.getElementById('salario').value = ''
             alert(`Funcionário ${nome} cadastrado com salário de R$${parseFloat(salario).toFixed(2)}`)
+        }
     })
 }
 
@@ -186,8 +189,11 @@ const fazerAtualizacao = () => {
             headers: {"Content-type": "application/json; charset=UTF-8"}
         })
         .then(res => {
-            if (res.ok)
+            if (res.ok) {
+                document.getElementById('nome').value = ''
+                document.getElementById('salario').value = ''  
                 alert("Funcionário atualizado com sucesso!")
+            }
         })
     }
 }
