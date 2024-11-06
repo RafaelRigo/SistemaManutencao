@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 class Funcionario {
   final int id;
   final String nome;
@@ -15,8 +17,8 @@ class Funcionario {
     return Funcionario(
       id: json['id'],
       nome: json['nome'],
-      salario: json['salario'],
-      dataCadastro: json['data_cadastro'],
+      salario: json['salario'].toDouble(),
+      dataCadastro: json['dataCadastro'],
     );
   }
 

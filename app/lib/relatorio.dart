@@ -27,14 +27,17 @@ class Relatorio extends StatelessWidget {
 
     final theme = Theme.of(context);
 
-    // final funcionarios = fetchFuncionarios();
+    final  funcionarios = fetchFuncionarios();
+
+    for
 
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('Relatório', style: theme.textTheme.headlineLarge),
-          
+          SizedBox(height: 20)
+
         ],
       ),
     );
